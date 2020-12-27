@@ -1,63 +1,37 @@
-/* Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-SPDX-License-Identifier: Apache-2.0
+// const run = async () => {
+//   // Create S3 bucket
+//   try {
+//     const data = await s3.send(new CreateBucketCommand(bucketParams));
+//     console.log("Success. Bucket created.");
+//   } catch (err) {
+//     console.log("Error", err);
+//   }
+//   try {
+//     const results = await s3.send(new PutObjectCommand(objectParams));
+//     console.log("Successfully uploaded data to " + bucketName + "/" + keyName);
+//   } catch (err) {
+//     console.log("Error", err);
+//   }
+// };
+// run();
 
-ABOUT THIS NODE.JS EXAMPLE: This example works with AWS SDK for JavaScript version 3 (v3),
-which is available at https://github.com/aws/aws-sdk-js-v3. This example is in the 'AWS SDK for JavaScript v3 Developer Guide' at
-https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/getting-started-nodejs.html.
+import {upload, uploadFiles} from "./src/actions/upload";
 
-Purpose:
-index.ts demonstrates how to get started using node.js with the AWS SDK for JavaScript.
+let argv = require('minimist')(process.argv.slice(2));
+// -path -album
 
-Inputs (replace in code):
- - REGION
- - BUCKET_NAME
-
-Running the code:
-ts-node index.ts
-*/
-// snippet-start:[GettingStarted.JavaScript.NodeJS.sampleV3]
-// Import required AWS SDK clients and commands for Node.js
-
-const {
-  S3Client,
-  PutObjectCommand,
-  CreateBucketCommand
-} = require("@aws-sdk/client-s3");
-
-// Set the AWS region
-const REGION = "eu-north-1"; // e.g., "us-east-1"
-
-// Set the bucket parameters
-const bucketName = "testpolinaalikina";
-const bucketParams = { Bucket: bucketName };
-
-// Create name for uploaded object key
-const keyName = "hello_world.txt";
-const objectParams = { Bucket: bucketName, Key: keyName, Body: "Hello World!" };
-
-// Create an S3 client service object
-const s3 = new S3Client({
-    credentials: {
-        accessKeyId: "AKIAW3Y3FATCHRJVV42H",
-        secretAccessKey: "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"
-    },
-    region: REGION
+argv._.forEach((command: string) => {
+    switch (command) {
+        case 'upload':
+            if (argv.p && argv.a) {
+                uploadFiles({
+                    path: argv.p,
+                    album: argv.a
+                });
+            }
+            break;
+        case 'download':
+            break;
+        case 'list':
+    }
 });
-
-const run = async () => {
-  // Create S3 bucket
-  try {
-    const data = await s3.send(new CreateBucketCommand(bucketParams));
-    console.log("Success. Bucket created.");
-  } catch (err) {
-    console.log("Error", err);
-  }
-  try {
-    const results = await s3.send(new PutObjectCommand(objectParams));
-    console.log("Successfully uploaded data to " + bucketName + "/" + keyName);
-  } catch (err) {
-    console.log("Error", err);
-  }
-};
-run();
-
