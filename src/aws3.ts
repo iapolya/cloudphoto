@@ -1,21 +1,13 @@
 const {
     S3Client,
-    PutObjectCommand,
-    CreateBucketCommand
 } = require("@aws-sdk/client-s3");
+const AWS = require("aws-sdk");
 
-// Set the AWS region
-const REGION = "eu-north-1"; // e.g., "us-east-1"
+const REGION = "eu-north-1";
 
-// Set the bucket parameters
 export const bucketName = "testpolinaalikina";
 const bucketParams = { Bucket: bucketName };
 
-// Create name for uploaded object key
-const keyName = "hello_world.txt";
-const objectParams = { Bucket: bucketName, Key: keyName, Body: "Hello World!" };
-
-// Create an S3 client service object
 export const s3 = new S3Client({
     credentials: {
         accessKeyId: "AKIAW3Y3FATCHRJVV42H",
