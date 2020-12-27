@@ -8,7 +8,6 @@ export const upload = async (params: BucketUpload) => {
     await s3.send(new PutObjectCommand(objectParams));
 };
 
-
 export const uploadFiles = (params: UploadParameters) => {
     return fs.readdirSync(params.path)
         .filter(isImage)
