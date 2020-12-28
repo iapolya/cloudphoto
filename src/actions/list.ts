@@ -8,7 +8,18 @@ export const listFiles = () => {
 }
 
 export const listFilesInAlbum = (album: string) => {
+    listFiles().then((files) => {
+        let photos = new Set();
+        files.forEach((file) => {
+            let pathParts = file.Key.split('/');
+            pathParts.pop();
 
+            if (pathParts.join('/') === album)
+                photos.add(file.Key);
+        });
+
+        console.log(`Фотографии в альбоме "${album}": ${Array.from(photos).join(', ')}`);
+    });
 };
 
 export const listAlbums = () => {
