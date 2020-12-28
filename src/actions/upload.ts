@@ -13,6 +13,7 @@ export const uploadFiles = (params: UploadParameters) => {
         .filter(isImage)
         .map(async (photo) => {
             let file = await readFile(params.path + "/" + photo);
+            console.log(file);
             await upload({ path: `${params.album}/${photo}`, file });
         });
 };

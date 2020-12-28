@@ -4,7 +4,6 @@
     <list default="true" id="64de2199-69c8-48ac-888e-4285bc86c4e0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/download.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/download.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/list.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/list.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/upload.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/upload.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/aws3.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/aws3.ts" afterDir="false" />
@@ -84,7 +83,9 @@
       <workItem from="1609028753072" duration="113000" />
       <workItem from="1609028877451" duration="12000" />
       <workItem from="1609028895469" duration="4115000" />
-      <workItem from="1609102544061" duration="8071000" />
+      <workItem from="1609102544061" duration="10214000" />
+      <workItem from="1609161545875" duration="599000" />
+      <workItem from="1609183294383" duration="1395000" />
     </task>
     <task id="LOCAL-00001" summary="+ init project">
       <created>1609028983439</created>
@@ -107,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609112266147</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="+ пришлось сменить апишку, потому что не получилось скачать файл через новую (">
+      <created>1609114621211</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1609114621211</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,13 +126,14 @@
     <MESSAGE value="+ загрузка фото" />
     <MESSAGE value="+ загрузка альбомом (пока без обработки ошибок)" />
     <MESSAGE value="+ частичное скачивание файлов" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ частичное скачивание файлов" />
+    <MESSAGE value="+ пришлось сменить апишку, потому что не получилось скачать файл через новую (" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ пришлось сменить апишку, потому что не получилось скачать файл через новую (" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1609112265252">
+    <state x="418" y="0" key="CommitChangelistDialog2" timestamp="1609114620242">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1609112265252" />
+    <state x="418" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1609114620242" />
     <state width="1515" height="108" key="GridCell.Tab.0.bottom" timestamp="1609111671347">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

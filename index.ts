@@ -1,6 +1,5 @@
-// import {upload, uploadFiles} from "./src/actions/upload";
 import {downloadFiles} from "./src/actions/download";
-import {listFiles} from "./src/actions/list";
+import {listAlbums, listFilesInAlbum} from "./src/actions/list";
 import {uploadFiles} from "./src/actions/upload";
 
 let argv = require('minimist')(process.argv.slice(2));
@@ -24,7 +23,11 @@ argv._.forEach(async (command: string) => {
             }
             break;
         case 'list':
-            listFiles();
+            if (argv.a) {
+                listFilesInAlbum(argv.a);
+            } else {
+                listAlbums();
+            }
             break;
     }
 });
