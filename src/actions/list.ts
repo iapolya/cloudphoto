@@ -1,5 +1,4 @@
 import {Bucket, s3ListObjects} from "../aws3";
-import {isImage} from "../utils/validators";
 
 export const listFiles = () => {
     return s3ListObjects({ Bucket }).then((response) =>
