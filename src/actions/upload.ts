@@ -1,13 +1,11 @@
 import {BucketUpload, UploadParameters} from "../types";
-import {bucketName, s3} from "../aws3";
-import {PutObjectCommand} from "@aws-sdk/client-s3";
 import * as fs from "fs";
 import {readFile} from "../utils/files";
 import {isImage} from "../utils/validators";
+import {Bucket, s3Upload} from "../aws3";
 
 export const upload = async (params: BucketUpload) => {
-    const objectParams = { Bucket: bucketName, Key: params.path, Body: params.file };
-    await s3.send(new PutObjectCommand(objectParams));
+    await s3Upload({ Bucket, Key: params.path, Body: params.file });
 };
 
 export const uploadFiles = (params: UploadParameters) => {

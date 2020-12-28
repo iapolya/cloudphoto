@@ -1,17 +1,28 @@
-const {
-    S3Client,
-} = require("@aws-sdk/client-s3");
+import {promisify} from "util";
+
 const AWS = require("aws-sdk");
-
-const REGION = "eu-north-1";
-
-export const bucketName = "testpolinaalikina";
-const bucketParams = { Bucket: bucketName };
-
-export const s3 = new S3Client({
+AWS.config.update({
+    region: "eu-north-1",
     credentials: {
         accessKeyId: "AKIAW3Y3FATCHRJVV42H",
         secretAccessKey: "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"
     },
-    region: REGION
 });
+
+const s3 = new AWS.S3({ apiVersion: "2006-03-01" });
+
+export const s3Upload = promisify(s3.upload.bind(s3));
+export const s3ListObjects = promisify(s3.listObjectsV2.bind(s3));
+
+export const Bucket = "testpolinaalikina";
+
+
+const list = () => {
+    return s3ListObjects({ Bucket }).then((response) =>
+        response.Contents.map((object) => object.Key)
+    );
+};
+
+export const download = (key: string) => {
+    return s3.getObject({ Bucket, Key: key }).createReadStream();
+};
