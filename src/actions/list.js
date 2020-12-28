@@ -1,12 +1,12 @@
-import {Bucket, s3ListObjects} from "../aws3";
+const {Bucket, s3ListObjects} = require("../aws3");
 
-export const listFiles = () => {
+const listFiles = () => {
     return s3ListObjects({ Bucket }).then((response) =>
         response.Contents
     );
 }
 
-export const listFilesInAlbum = (album: string) => {
+const listFilesInAlbum = (album) => {
     listFiles().then((files) => {
         let photos = new Set();
         files.forEach((file) => {
@@ -21,7 +21,7 @@ export const listFilesInAlbum = (album: string) => {
     });
 };
 
-export const listAlbums = () => {
+const listAlbums = () => {
     listFiles().then((files) => {
         let albums = new Set();
         files.forEach((file) => {
@@ -34,3 +34,9 @@ export const listAlbums = () => {
         console.log(`Список альбомов: ${Array.from(albums).join(', ')}`);
     });
 };
+
+module.exports = {
+    listFiles,
+    listFilesInAlbum,
+    listAlbums
+}

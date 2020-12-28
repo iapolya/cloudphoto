@@ -1,15 +1,13 @@
-import {UploadParameters} from "../types";
-import {listFiles} from "./list";
-import {_Object} from "@aws-sdk/client-s3";
-import {compareArrays} from "../utils/core";
-import * as fs from "fs";
-import {download} from "../aws3";
+const { listFiles } = require("./list");
+const  { compareArrays } = require("../utils/core");
+const fs = require("fs");
+const { download } =  require("../aws3");
 
-export const downloadFiles = (params: UploadParameters) => {
+const downloadFiles = (params) => {
     try {
         fs.statSync(params.path);
         let albumParts = params.album.split('/');
-        listFiles().then((files) => files.forEach((content: _Object) => {
+        listFiles().then((files) => files.forEach((content) => {
             writeFile(content, albumParts, params);
         }));
     } catch (e) {
@@ -26,3 +24,5 @@ function writeFile(content, albumParts, params) {
         download(content.Key).pipe(file);
     }
 }
+
+module.exports = { downloadFiles };

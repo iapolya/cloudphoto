@@ -1,10 +1,12 @@
-import {downloadFiles} from "./src/actions/download";
-import {listAlbums, listFilesInAlbum} from "./src/actions/list";
-import {uploadFiles} from "./src/actions/upload";
+#!/usr/bin/env node
+
+const { listAlbums, listFilesInAlbum } = require("./src/actions/list");
+const { uploadFiles } = require("./src/actions/upload");
+const { downloadFiles } = require("./src/actions/download");
 
 let argv = require('minimist')(process.argv.slice(2));
 
-argv._.forEach(async (command: string) => {
+argv._.forEach(async (command) => {
     switch (command) {
         case 'upload':
             if (argv.p && argv.a) {

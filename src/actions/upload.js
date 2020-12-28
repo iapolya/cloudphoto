@@ -1,14 +1,13 @@
-import {BucketUpload, UploadParameters} from "../types";
-import * as fs from "fs";
-import {readFile} from "../utils/files";
-import {isImage} from "../utils/validators";
-import {Bucket, s3Upload} from "../aws3";
+const fs = require("fs");
+const { readFile } =  require("../utils/files");
+const { isImage } =  require("../utils/validators");
+const { Bucket, s3Upload } =  require("../aws3");
 
-export const upload = async (params: BucketUpload) => {
+const upload = async (params) => {
     await s3Upload({ Bucket, Key: params.path, Body: params.file });
 };
 
-export const uploadFiles = (params: UploadParameters) => {
+const uploadFiles = (params) => {
     try {
         let filesInPath = fs.readdirSync(params.path);
         return filesInPath.filter(isImage)
@@ -20,3 +19,8 @@ export const uploadFiles = (params: UploadParameters) => {
         console.log('Каталог не существует')
     }
 };
+
+module.exports = {
+    uploadFiles,
+    upload
+}
