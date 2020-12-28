@@ -29,5 +29,7 @@ argv._.forEach(async (command: string) => {
                 listAlbums();
             }
             break;
+        default:
+            console.log('Поддерживаемые команды: upload, download, list')
     }
 });

@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64de2199-69c8-48ac-888e-4285bc86c4e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/list.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/list.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aws3.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/aws3.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/upload.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/upload.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/metadata.yaml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +86,7 @@
       <workItem from="1609102544061" duration="10214000" />
       <workItem from="1609161545875" duration="599000" />
       <workItem from="1609183294383" duration="4108000" />
+      <workItem from="1609189864116" duration="1057000" />
     </task>
     <task id="LOCAL-00001" summary="+ init project">
       <created>1609028983439</created>

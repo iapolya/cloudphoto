@@ -9,11 +9,14 @@ export const upload = async (params: BucketUpload) => {
 };
 
 export const uploadFiles = (params: UploadParameters) => {
-    return fs.readdirSync(params.path)
-        .filter(isImage)
-        .map(async (photo) => {
-            let file = await readFile(params.path + "/" + photo);
-            console.log(file);
-            await upload({ path: `${params.album}/${photo}`, file });
-        });
+    try {
+        let filesInPath = fs.readdirSync(params.path);
+        return filesInPath.filter(isImage)
+            .map(async (photo) => {
+                let file = await readFile(params.path + "/" + photo);
+                await upload({ path: `${params.album}/${photo}`, file });
+            });
+    } catch (e) {
+        console.log('Каталог не существует')
+    }
 };
