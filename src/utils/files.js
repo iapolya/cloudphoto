@@ -4,6 +4,11 @@ const readFile = (path) => {
     return fs.createReadStream(path);
 };
 
+const getFileName = (path) => {
+    return path.split('/').pop();
+}
+
 module.exports = {
-    readFile
+    readFile,
+    getFileName
 }

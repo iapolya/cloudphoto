@@ -13,7 +13,6 @@ const downloadFiles = (params) => {
     } catch (e) {
         console.log('Каталога не существует');
     }
-
 };
 
 function writeFile(content, albumParts, params) {
