@@ -2,15 +2,16 @@ const promisify = require("util").promisify;
 require('dotenv').config();
 
 const AWS = require("aws-sdk");
-AWS.config.update({
+
+const s3 = new AWS.S3({
     region: process.env.REGION,
     credentials: {
         accessKeyId: process.env.ACCESS_KEY_ID,
         secretAccessKey: process.env.SECRET_KEY
     },
+    apiVersion: "2006-03-01",
 });
 
-const s3 = new AWS.S3({ apiVersion: "2006-03-01" });
 const Bucket = process.env.BUCKET_NAME;
 
 const download = (key) => {

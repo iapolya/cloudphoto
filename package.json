@@ -10,17 +10,8 @@
     "cloudphoto": "node index.js"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^1.0.0-gamma.6",
-    "@aws-sdk/node-http-handler": "^1.0.0-gamma.5",
-    "@aws-sdk/types": "^0.1.0-gamma.6",
     "aws-sdk": "^2.799.0",
     "dotenv": "^8.2.0",
-    "minimist": "^1.2.5",
-    "ts-node": "^9.0.0"
-  },
-  "devDependencies": {
-    "@types/node": "^14.0.23",
-    "typescript": "^4.0.2"
-  },
-  "module": "src"
+    "minimist": "^1.2.5"
+  }
 }
